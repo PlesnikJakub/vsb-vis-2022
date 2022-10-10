@@ -13,7 +13,7 @@ namespace Edisson.DataAccess
             return new UserDTO
             {
                 Name = name,
-                Password = "test"
+                PasswordHash = "1A67CDDC45360C1964D5A01421B027F884934C6B07AD7A0547AE9CD5AD0B4FC3"
             };
         }
     }

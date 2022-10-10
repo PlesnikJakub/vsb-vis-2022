@@ -12,7 +12,6 @@ var password = Console.ReadLine();
 var loginscript = new LoginTransactionScript();
 var isSuccess = loginscript.Login(name, password);
 
-
 // Domain Model
 
 if(isSuccess)
@@ -24,7 +23,12 @@ else
     Console.WriteLine("Incorrect password");
 }
 
+// Direct use of Domain model
+var student = StudentDataAccess.GetStudent();
+student.HasScholarship();
+// Since I have model I can do anything
+student.Login = "sdfsdf";
 
-// Student
+// Student Service
 var service = new StudentService();
 service.VerifyStudentHasScholarship("PLE1234");

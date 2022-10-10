@@ -8,7 +8,7 @@ namespace Edisson.Domain.TableModule
         {
             var user = UserDataAccess.GetUserByName(name);
 
-            return user.Password == password;
+            return user.PasswordHash == password;
         }
 
         public void Logout()

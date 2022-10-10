@@ -11,7 +11,7 @@ namespace Edisson.Domain.Domain
         {
             var user = UserDataAccess.GetUserByName(name);
 
-            return user.Password == password;
+            return user.PasswordHash == password;
         }
     }
 }
