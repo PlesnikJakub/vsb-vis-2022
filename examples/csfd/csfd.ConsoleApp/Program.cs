@@ -1,4 +1,4 @@
-﻿using csfd.BussinessLayer;
+﻿using csfd.BussinessLayer.Services;
 
 Console.WriteLine("Hello CSFD!");
 
@@ -13,9 +13,9 @@ foreach (var customer in result)
 
 var paymentService = new PaymentService();
 
-var payments = paymentService.GetPaymentsForCustomer(1);
+var paymentDTO = paymentService.GetPaymentsForCustomer(1);
 
-foreach (var payment in payments)
+foreach (var payment in paymentDTO.Payments)
 {
     Console.WriteLine($"{payment.Id} Amount: {payment.Amount}");
 }

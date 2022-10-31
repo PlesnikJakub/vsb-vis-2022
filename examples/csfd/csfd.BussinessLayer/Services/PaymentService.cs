@@ -1,7 +1,10 @@
-﻿using csfd.DataLayer;
+﻿using csfd.BussinessLayer.Dto;
+using csfd.BussinessLayer.Mapper;
+using csfd.BussinessLayer.Models;
+using csfd.DataLayer;
 using System.Data;
 
-namespace csfd.BussinessLayer
+namespace csfd.BussinessLayer.Services
 {
     public class PaymentService
     {
@@ -11,14 +14,20 @@ namespace csfd.BussinessLayer
             _paymentTableDataGateway = new PaymentTableDataGateway();
         }
 
-        public List<Payment> GetPaymentsForCustomer(int customerId)
+        public CutomerPaymentsDTO GetPaymentsForCustomer(int customerId)
         {
             var payments = Map(_paymentTableDataGateway.GetByCustomerId(customerId));
 
-            var count = payments.Count();
             var totalAmount = payments.Select(x => x.Amount).Sum();
+            var totalTax = totalAmount * 0.21;
 
-            return payments;
+            return new CutomerPaymentsDTO
+            {
+                Customer = null,
+                Payments = payments,
+                PayAmount = totalAmount,
+                TaxAmount = totalTax
+            };
         }
 
         private List<Payment> Map(DataTable paymentsTable)
@@ -27,22 +36,10 @@ namespace csfd.BussinessLayer
 
             foreach (DataRow row in paymentsTable.Rows)
             {
-                payments.Add(Map(row));
+                payments.Add(PaymentMapper.Map(row));
             }
 
             return payments;
-        }
-
-        private Payment Map(DataRow row)
-        {
-            var id = Convert.ToInt32(row["payment_id"]);
-            var amount = Convert.ToDouble(row["amount"]);
-
-            return new Payment
-            {
-                Id = id,
-                Amount = amount
-            };
         }
     }
 }

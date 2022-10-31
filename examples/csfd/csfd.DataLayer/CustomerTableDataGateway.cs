@@ -35,5 +35,26 @@ namespace csfd.DataLayer
             }
             return result;
         }
+
+        public DataTable GetById(int id)
+        {
+            var query = "select * from customer where customer_id = @customer_id";
+            var result = new DataTable();
+            var connString = DBConnector.GetBuilder().ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("customer_id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

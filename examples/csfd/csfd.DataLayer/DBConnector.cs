@@ -9,7 +9,7 @@ namespace csfd.DataLayer
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = @"dbsys.cs.vsb.cz\STUDENT";   // update me
             builder.UserID = "ple0049";              // update me
-            builder.Password = "aaa";      // update me
+            builder.Password = "a2iA48s6TWw0jyHf";      // update me
             builder.InitialCatalog = "ple0049";
             return builder;
         }

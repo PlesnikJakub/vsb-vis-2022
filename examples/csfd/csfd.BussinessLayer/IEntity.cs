@@ -1,8 +1,7 @@
 ﻿namespace csfd.BussinessLayer
 {
-    public class Payment
+    public interface IEntity
     {
         public int Id { get; set; }
-        public double Amount { get; set; }
     }
 }
