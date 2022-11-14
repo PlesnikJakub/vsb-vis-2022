@@ -3,7 +3,7 @@
 ## Zadání
 
 Vaším úkolem je vytvořit wireframy pro váš projekt. 
-* Vaším úkolem je vytvořit minimálně 6 wireframů které budou pokrývat obě platformy pro které budete implementovat UI. 
+* Vaším úkolem je vytvořit minimálně 3 wireframů které budou pokrývat obě platformy pro které budete implementovat UI. 
 * Mimo wireframe připravte mapu navigace v aplikaci. (Navigaci můžete zakomponovat do wireframu nebo zakreslit samostatně).
 
 ### Wireframe example
