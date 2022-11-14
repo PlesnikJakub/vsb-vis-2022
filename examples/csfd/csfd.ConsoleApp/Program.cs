@@ -1,23 +1,31 @@
 ﻿using csfd.BussinessLayer.Services;
+using csfd.BussinessLayer.TransactionScripts;
 
-Console.WriteLine("Hello CSFD!");
+var revenue = new CalculateRevenue().Calculate();      
 
-var service = new CustomerService();
+Console.WriteLine($"Revenue: {revenue}");
 
-var result = service.GetAllCustomers();
 
-foreach (var customer in result)
-{
-    Console.WriteLine($"{customer.Id} {customer.Lastname}");
-}
+return;
 
-var paymentService = new PaymentService();
+//Console.WriteLine("Hello CSFD!");
 
-var paymentDTO = paymentService.GetPaymentsForCustomer(1);
+//var service = new CustomerService();
 
-foreach (var payment in paymentDTO.Payments)
-{
-    Console.WriteLine($"{payment.Id} Amount: {payment.Amount}");
-}
+//var result = service.GetAllCustomers();
 
-Console.WriteLine("End");
+//foreach (var customer in result)
+//{
+//    Console.WriteLine($"{customer.Id} {customer.Lastname}");
+//}
+
+//var paymentService = new PaymentService();
+
+//var paymentDTO = paymentService.GetPaymentsForCustomer(1);
+
+//foreach (var payment in paymentDTO.Payments)
+//{
+//    Console.WriteLine($"{payment.Id} Amount: {payment.Amount}");
+//}
+
+//Console.WriteLine("End");
