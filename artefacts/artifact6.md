@@ -7,9 +7,3 @@ Diagram komponent znázorňuje softwarové komponenty použité v systému. Moho
 
 
 https://www.uml-diagrams.org/component-diagrams.html
-
-
-## Diagram nasazení
-Diagram nasazení ukazuje rozmístění zdrojů (např. HW) a softwarové komponenty, procesy a objekty, které na nich žijí. [[2]]('http://mpavus.wz.cz/uml/uml-deployment-12.php')
-
-https://www.uml-diagrams.org/deployment-diagrams-overview.html
